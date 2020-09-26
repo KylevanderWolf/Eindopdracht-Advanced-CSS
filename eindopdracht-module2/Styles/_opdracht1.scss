@@ -1,0 +1,61 @@
+
+@mixin flexdirection() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  $fontsize : 1.3em;
+  $lineheight : 1.8;
+
+  
+.page1 {
+    height: 100vh;
+    background-color: #c3cfe2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+  width: 400px;
+  height: 500px;
+  background-color: white;
+  border-radius: 15px;
+
+  &__header {
+    height: 300px;
+    padding: 25px;
+    font-size: $fontsize;
+    line-height: $lineheight;
+  }
+  &__img {
+    @include flexdirection();
+  }
+  &__img img {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 90px;
+    border: none;
+    outline: none;
+    border: 5px solid white;
+    transition: 1000ms ease-in;
+  }
+  &__img img:hover {
+    transform: rotate(360deg);;
+  }
+  &__footer {
+    @include flexdirection();
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    height: 200px;
+    background-color: #686de0;
+  }
+  &__footer--p {
+    color: white;
+    font-size: $fontsize;
+    line-height: $lineheight;
+  }
+
+}

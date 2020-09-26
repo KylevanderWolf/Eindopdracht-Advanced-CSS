@@ -1,0 +1,108 @@
+
+@mixin flexdirection() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @mixin itemstyle() {
+    width: 100%;
+    height: 10vh;
+    cursor: pointer;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: width 500ms ease-in-out;
+    padding: 5px 20px;
+    font-size: 1.5em;
+    color: white;
+  }
+
+  @mixin hoverwidth(){
+    width:300px;
+    transition: width 500ms ease-in-out;
+  }
+
+  @mixin hovertext(){
+    margin: 0px 10px;
+    transition-delay: 500ms;
+    color: white;
+  }
+
+.page3 {
+    height: 100vh;
+    background-color: #c3cfe2;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.navbar {
+    width: 100px;
+    height: 75vh;
+
+    .navbar__blog {
+        @include flexdirection();
+        @include itemstyle();
+        background-color: #e17b77;
+        &:hover {
+            @include hoverwidth();
+        }
+        &:hover::after {
+            content:"Blog";
+            @include hovertext();
+        }
+    }
+
+    .navbar__twitter {
+        @include flexdirection();
+        @include itemstyle();
+        background-color: #00aced;
+        &:hover {
+            @include hoverwidth();
+        }
+        &:hover::after {
+            content:"Twitter";
+            @include hovertext();
+        }
+    }
+    
+    .navbar__linkedin {
+        @include flexdirection();
+        @include itemstyle();
+        background-color: #007bb6;
+        &:hover {
+            @include hoverwidth();
+        }
+        &:hover::after {
+            content:"LinkedIn";
+            @include hovertext();
+        }
+    }
+    
+    .navbar__facebook {
+        @include flexdirection();
+        @include itemstyle();
+        background-color: #3b5998;
+        &:hover {
+            @include hoverwidth();
+        }
+        &:hover::after {
+            content:"Facebook";
+            @include hovertext();
+        }
+    }
+    
+    .navbar__github {
+        @include flexdirection();
+        @include itemstyle();
+        background-color: #333;
+        &:hover {
+            @include hoverwidth();
+        }
+        &:hover::after {
+            content:"Github";
+            @include hovertext();
+        }
+    }
+    
+}
